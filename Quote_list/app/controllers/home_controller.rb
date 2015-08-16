@@ -15,17 +15,20 @@ class HomeController < ApplicationController
 
   def create
 
+    puts '-----Params-----'
+    puts params
+    puts '----------'
     #sumbit form
-    @quote.create(
-    :saying => 'test',
-    :author => 'Jerry Garcia'
+    @quote = Quote.create(
+    :saying => params[:quote][:saying],
+    :author => params[:quote][:author]
     )
 
   end
 
   def delete
 
-    @quote.find(1).destroy
+    @quote = Quote.find(params[:quote][:id]).destroy
 
   end
 end

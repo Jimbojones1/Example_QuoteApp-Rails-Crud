@@ -1,2 +1,12 @@
-<h1>Home#new</h1>
-<p>Find me in app/views/home/new.html.erb</p>
+<h3>Add Quote</h3>
+
+<%= form_for @quote, url: {action: 'create'}, html: {class: 'table table-bordered'} do |f| %>
+
+  Quote: <%= f.text_field :saying %>
+  Author: <%= f.text_field :author %>
+  <%= f.submit 'Add Quote' %>
+
+<% end %>
+
+
+<li><a href="/home">Back to home</a></li>

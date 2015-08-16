@@ -1,2 +1,43 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Inspiration Move Me Brightly</h1>
+
+
+<li><a href="/home/new">Add Quote</a></li>
+
+<h3>My Qoutes</h3>
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <td>
+        Quote
+      </td>
+      <td>
+        Author
+      </td>
+      <td>
+        Check it off
+      </td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |quote| %>
+
+        <tr>
+          <td>
+            <%= quote.saying %>
+          </td>
+          <td>
+            <%= quote.author %>
+          </td>
+          <td>
+            <%= form_for quote, url: {action: 'delete'} do |f| %>
+              <%= f.hidden_field :id %>
+              <%= f.submit 'remove' %>
+            <% end %>
+          </td>
+        </tr>
+
+    <% end %>
+</tbody>
+</table>
