@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get '/' => 'home#index'
 
-  get 'home/new'
+  get 'home/new' => 
 
-  get 'home/create'
+  post 'home/create'
 
   get 'home/delete'
 
