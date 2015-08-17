@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
+
   get 'home' => 'home#index'
-
   get 'home/new' => 'home#new'
-
   post 'home/create' => 'home#create'
-
   patch 'home/delete' => 'home#delete'
+
+  get 'users/login' => 'sessions#login'
+  post 'users/login_confirmation' => 'sessions#confirmation'
+  get 'users/logout' => 'sessions#logout'
+
+  get 'users/registration' => 'users#signup'
+  post 'users/confirmation' => 'users#confirmation'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,17 @@
+<h1>Welcome to My Quotes</h1>
+
+<% if @message.nil? == false %>
+  <span class='error'><%= @message %></span>
+<% end %>
+
+<h3>Please Register</h3>
+
+<%= form_for :user, url: 'confirmation' do |f| %>
+  Name: <%= f.text_field :username %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Confirmation: <%= f.password_field :password_confirmation %>
+
+  <%= f.submit 'Create account' %>
+
+<% end %>
